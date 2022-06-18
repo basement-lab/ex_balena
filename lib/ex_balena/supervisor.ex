@@ -25,7 +25,7 @@ defmodule ExBalena.Supervisor do
   @impl true
   @spec init(keyword()) ::
           {:ok, {:supervisor.sup_flags(), [:supervisor.child_spec()]}} | :ignore
-  def init(init_arg \\ []) do
+  def init(_init_arg \\ []) do
     children = [
       {Finch,
        name: ExBalena.Finch,
