@@ -6,8 +6,7 @@ defmodule ExBalena.Client do
   @type from :: :host | :remote
 
   @spec new() :: Tesla.Client.t()
-
-  def new() do
+  def new do
     auth_middleware =
       if(is_container?(),
         do: {Tesla.Middleware.Query, [apikey: get_supervisor_api_key()]},
